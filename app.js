@@ -1,5 +1,5 @@
 var os = require('os');
-var fs = require('fs');
+// var fs = require('fs');
 var path = require('path');
 var QRCode = require("./lib/qrcode.js");
 
@@ -104,13 +104,13 @@ var qrcode = new QRCode(config);
 var svg = qrcode.svg();
 
 if (typeof config.outputFile == "string" && config.outputFile.length > 0) {
-  if (!config.force && fs.existsSync(config.outputFile)) {
-    console.error("File already exists: " + config.outputFile);
-    process.exit(2);
-  }
+//   if (!config.force && fs.existsSync(config.outputFile)) {
+//     console.error("File already exists: " + config.outputFile);
+//     process.exit(2);
+//   }
 
-  fs.writeFileSync(config.outputFile, svg);
-  console.log("Done!");
+//   fs.writeFileSync(config.outputFile, svg);
+  console.log("No saving!");
 }
 else {
   console.log(svg);
